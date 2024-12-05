@@ -11,7 +11,7 @@ explained in the comments below.
 """
 
 
-def sum_list(input_list: list) -> float:
+def sum_list(input_list: list[float]) -> float:
     """
     Sum the elements of a list and return the result as a float.
 
