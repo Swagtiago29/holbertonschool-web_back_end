@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-This module provides a function to compute the floor of a floating-point number.
+This module provides a function to compute the floor of a floating-point numbe
 
 The `floor` function takes a float as input and returns the largest integer
-less than or equal to that number. The floor is computed using Python's built-in
+less than or equal to that number. The floor is computed using Python's built
 `math.floor()` function from the `math` module.
 
 Module-level documentation explains the functionality and usage of the script.
@@ -16,8 +16,8 @@ def floor(n: float) -> int:
     """
     Return the largest integer less than or equal to the input float.
 
-    This function uses the `math.floor()` function to return the floor of 
-    the given float, which is the greatest integer less than or equal to 
+    This function uses the `math.floor()` function to return the floor of
+    the given float, which is the greatest integer less than or equal to
     the number.
 
     Parameters:
