@@ -2,9 +2,11 @@
 """
 This module provides a function to concatenate two strings.
 
-The `concat` function takes two strings as input and returns their concatenation.
+The `concat` function takes two strings as input and returns their
+concatenation.
 
-Module-level documentation provides an overview of the functionality of this script.
+Module-level documentation provides an overview of the functionality of
+this script.
 """
 
 
