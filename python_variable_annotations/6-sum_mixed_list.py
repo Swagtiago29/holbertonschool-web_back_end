@@ -2,7 +2,7 @@
 from typing import List, Union
 
 """
-This module contains a function to sum elements of a mixed list containing 
+This module contains a function to sum elements of a mixed list containing
 integers and floating-point numbers.
 
 The `sum_mixed_list` function takes a list of numbers (both `int` and `float`)
@@ -14,7 +14,8 @@ def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
     """
     Sum the elements of a mixed list and return the result as a float.
 
-    This function takes a list that may contain both integers and floating-point
+    This function takes a list that may contain both integers and
+    floating-point
     numbers, sums the values, and returns the total as a float.
 
     Parameters:
