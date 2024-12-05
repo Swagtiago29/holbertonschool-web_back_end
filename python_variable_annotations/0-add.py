@@ -6,6 +6,7 @@ It demonstrates the use of type annotations in Python and provides
 a simple example of module and function documentation.
 """
 
+
 def add(a: float, b: float) -> float:
     """
     Add two floating-point numbers and return the result.
