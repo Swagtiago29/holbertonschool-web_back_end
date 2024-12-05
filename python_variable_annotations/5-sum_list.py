@@ -10,8 +10,10 @@ Note: The code has a small issue with variable initialization, which is
 explained in the comments below.
 """
 
+from typing import List
 
-def sum_list(input_list: list[float]) -> float:
+
+def sum_list(input_list: List[float]) -> float:
     """
     Sum the elements of a list and return the result as a float.
 
