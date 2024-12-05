@@ -7,7 +7,7 @@ representation using Python's built-in `str()` function.
 """
 
 
-def to_str(n: int) -> str:
+def to_str(n: float) -> str:
     """
     Convert an integer to its string representation.
 
