@@ -25,7 +25,7 @@ Example usage:
 from typing import Callable
 
 
-def make_multipier(multiplier: float) -> Callable[[float], float]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
     Creates a function that multiplies a given number by a specified multiplie
 
