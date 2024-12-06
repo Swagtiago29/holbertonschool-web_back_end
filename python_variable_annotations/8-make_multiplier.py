@@ -13,7 +13,7 @@ multiplier value.
 
 Functions:
     make_multipier(multiplier: float) -> Callable[[float], float]:
-        Creates and returns a function that multiplies its input by the multiplier.
+        Creates and returns a function that multiplies its input by the multip
 
 Example usage:
     multiply_by_3 = make_multipier(3.0)
