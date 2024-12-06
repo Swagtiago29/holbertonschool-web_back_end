@@ -18,14 +18,14 @@ from typing import List, Iterable, Tuple
 
 def element_length(lst: List[Iterable]) -> List[Tuple[Iterable, int]]:
     """
-    Given a list of iterable elements, return a list of tuples where each tuple
+    Given a list of iterable elements, return a list of tuples where each tupl
     contains the element from the input list and its corresponding length.
 
     Args:
-        lst (List[Iterable]): A list of iterable elements (e.g., strings, lists, etc.).
+        lst (List[Iterable]): A list of iterable elements (e.g., strings, list
 
     Returns:
-        List[Tuple[Iterable, int]]: A list of tuples, where each tuple contains
+        List[Tuple[Iterable, int]]: A list of tuples, where each tuple contain
                                     an element from the input list and the
                                     length of that element (as an integer).
     
