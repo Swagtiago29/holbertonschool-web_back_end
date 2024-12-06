@@ -28,7 +28,7 @@ def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
         List[Tuple[Iterable, int]]: A list of tuples, where each tuple contain
                                     an element from the input list and the
                                     length of that element (as an integer).
-    
+
     Example:
         element_length(['apple', 'banana', 'cherry'])
         # Returns: [('apple', 5), ('banana', 6), ('cherry', 6)]
