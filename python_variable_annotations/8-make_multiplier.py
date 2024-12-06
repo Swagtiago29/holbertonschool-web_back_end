@@ -2,12 +2,10 @@
 from typing import Callable
 
 """
-This module provides a utility to create a multiplier function.
+This module defines a function `make_multipier` that creates a multiplier function.
 
-The `make_multipier` function takes a float `multiplier` as an argument and
-returns a function that can multiply any given number by this multiplier.
-This allows for creating specialized multiplier functions based on the
-multiplier value provided.
+The function `make_multipier` accepts a float `multiplier` and returns a new
+function that multiplies its input by this multiplier.
 
 Example usage:
     multiply_by_3 = make_multipier(3.0)
@@ -15,12 +13,13 @@ Example usage:
 """
 
 
-def make_multiplier(multiplier: float) -> Callable[[float], float]:
+def make_multipier(multiplier: float) -> Callable[[float], float]:
     """
     This function creates a multiplier function.
 
     Args:
-        multiplier (float): The value by which other numbers will be multiplid
+        multiplier (float): The value by which other numbers will be
+        multiplied.
 
     Returns:
         Callable[[float], float]: A function that takes a float as input and
