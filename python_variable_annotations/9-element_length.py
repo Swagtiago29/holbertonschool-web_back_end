@@ -16,7 +16,7 @@ Example usage:
 from typing import List, Tuple, Sequence, Iterable
 
 
-def element_length(lst: Iterable) -> List[Tuple[Sequence, int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """
     Given a list of iterable elements, return a list of tuples where each tupl
     contains the element from the input list and its corresponding length.
