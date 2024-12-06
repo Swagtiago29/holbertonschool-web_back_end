@@ -24,7 +24,7 @@ import random
 import asyncio
 
 
-async def wait_random(max_delay: int=10) -> float:
+async def wait_random(max_delay: int = 10) -> float:
     """
     Asynchronously generates a random floating-point number and sleeps for tha
     amount of time.
