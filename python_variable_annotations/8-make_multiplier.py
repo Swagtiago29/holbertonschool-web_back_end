@@ -12,7 +12,7 @@ Example:
     result = multiply_by_3(4.0)  # result will be 12.0
 """
 
-def make_multipier(multiplier: float) -> Callable[[float], float]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
     This function creates a multiplier function.
 
