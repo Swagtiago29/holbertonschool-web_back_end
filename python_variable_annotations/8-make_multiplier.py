@@ -15,7 +15,7 @@ Example usage:
 """
 
 
-def make_multipier(multiplier: float) -> Callable[[float], float]:
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
     """
     This function creates a multiplier function.
 
