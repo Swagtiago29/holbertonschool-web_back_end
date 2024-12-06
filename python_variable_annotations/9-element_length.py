@@ -13,10 +13,10 @@ Example usage:
     element_length(['apple', 'banana', 'cherry'])
     # Returns: [('apple', 5), ('banana', 6), ('cherry', 6)]
 """
-from typing import List, Iterable, Tuple
+from typing import List, Tuple, Sequence
 
 
-def element_length(lst: List[Iterable]) -> List[Tuple[Iterable, int]]:
+def element_length(lst: List[Sequence]) -> List[Tuple[Sequence, int]]:
     """
     Given a list of iterable elements, return a list of tuples where each tupl
     contains the element from the input list and its corresponding length.
