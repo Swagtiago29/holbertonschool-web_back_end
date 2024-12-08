@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 This module measures the time it takes to execute `wait_n`, an asynchronous
-function that runs `n` concurrent tasks, each calling `wait_random(max_delay)`. 
+function that runs `n` concurrent tasks, each calling `wait_random(max_delay)`.
 
 The module imports `wait_n` from the `1-concurrent_coroutines` module and
 measures the time it takes to execute `wait_n(n, max_delay)` and returns
