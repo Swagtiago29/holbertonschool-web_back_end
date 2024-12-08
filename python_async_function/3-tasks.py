@@ -5,13 +5,13 @@ that wraps the `wait_random` coroutine. The `wait_random` coroutine is expected
 to simulate a random delay and return the delay after the sleep.
 
 The `task_wait_random` function schedules the `wait_random` coroutine with a
-specified `max_delay`, which is passed as an argument, and returns an asyncio task
-that will execute the coroutine concurrently when awaited.
+specified `max_delay`, which is passed as an argument, and returns an asyncio
+task that will execute the coroutine concurrently when awaited.
 
 Modules Used:
 - `importlib`: Used to dynamically import the `wait_random` coroutine from the
   `0-basic_async_syntax` module.
-- `asyncio`: Used to create the asyncio task and manage asynchronous execution.
+- `asyncio`: Used to create the asyncio task and manage asynchronous execution
 
 Functions:
 - `task_wait_random`: Schedules the `wait_random` coroutine with the given
@@ -47,8 +47,7 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
 
     Explanation:
         The `task_wait_random` function wraps the `wait_random` coroutine into
-        a task, which can be awaited to get the result (the delay time). The task
-        will execute concurrently within an event loop.
+        a task, which can be awaited to get the result (the delay time). The
+        task will execute concurrently within an event loop.
     """
-    # Create and return an asyncio task that runs the wait_random coroutine
     return asyncio.create_task(wait_random(max_delay))
