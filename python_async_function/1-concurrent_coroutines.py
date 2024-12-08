@@ -21,6 +21,7 @@ from typing import List
 
 wait_random = importlib.import_module('0-basic_async_syntax').wait_random
 
+
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     Creates and runs `n` asynchronous tasks that call `wait_random(max_delay)`
