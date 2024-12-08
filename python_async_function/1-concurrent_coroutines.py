@@ -45,11 +45,11 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
         >>> asyncio.run(wait_n(3, 5))
         [1.2, 0.5, 3.0]
     """
-    # Create `n` tasks that each run `wait_random(max_delay)`
+
     tasks = [wait_random(max_delay) for _ in range(n)]
-    
-    # Run all tasks concurrently and gather their results
     delays = await asyncio.gather(*tasks)
-    
-    # Return the list of delays
-    return [delay for delay in delays]
+    for i in range(len(delays)):
+        for j in range(0, len(delays) - i - 1):
+            if delays[j] > delays[j + 1]:
+                delays[j], delays[j + 1] = delays[j + 1], delays[j]
+    return delays
