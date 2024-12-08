@@ -1,10 +1,31 @@
 #!/usr/bin/env python3
+"""
+This module measures the time it takes to execute `wait_n`, an asynchronous
+function that runs `n` concurrent tasks, each calling `wait_random(max_delay)`. 
+
+The module imports `wait_n` from the `1-concurrent_coroutines` module and
+measures the time it takes to execute `wait_n(n, max_delay)` and returns
+the average time per task in seconds.
+
+Modules Used:
+- `importlib`: Used to dynamically import the `wait_n` function from the
+`1-concurrent_coroutines` module.
+- `time`: Used to measure the start and end time to calculate the total
+execution time of the `wait_n` function.
+- `asyncio`: Used to run the asynchronous `wait_n` function, which executes
+the tasks concurrently.
+
+Functions:
+- `measure_time`: Measures the execution time for the `wait_n` function,
+then calculates and returns the average time per task.
+"""
 import importlib
 import time
 import asyncio
 
 # Importing the wait_n function from the 1-concurrent_coroutines module
 wait_n = importlib.import_module('1-concurrent_coroutines').wait_n
+
 
 def measure_time(n: int, max_delay: int) -> float:
     """
