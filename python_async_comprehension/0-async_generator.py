@@ -24,7 +24,7 @@ import asyncio
 from random import randint
 
 
-async def async_generator() -> list:
+async def async_generator():
     """
     Asynchronously generates a list of 10 random integers (between 0 and 10),
     each followed by a random delay. The delay is simulated using
@@ -36,9 +36,8 @@ async def async_generator() -> list:
     Returns:
         list: A list of 10 randomly generated integers (between 0 and 10).
     """
-    results = []
+
     for _ in range(10):
-        x = randint(0, 10)
-        await asyncio.sleep(x)
-        results.append(x)
-    return results  
+        await asyncio.sleep(1)
+        yield randint(0, 10)
+print(asyncio.run(async_generator()))
