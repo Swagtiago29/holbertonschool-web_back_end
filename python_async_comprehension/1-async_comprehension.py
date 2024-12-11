@@ -16,7 +16,6 @@ External Dependencies:
     integers with a delay.
 """
 import importlib
-import asyncio
 from typing import List
 async_generator = importlib.import_module('0-async_generator').async_generator
 
