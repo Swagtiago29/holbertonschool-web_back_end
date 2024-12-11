@@ -27,7 +27,7 @@ from random import randint
 from typing import AsyncGenerator
 
 
-async def async_generator() -> AsyncGenerator[int, None]:
+async def async_generator() -> AsyncGenerator[float, None, None]:
     """
     Asynchronously generates a list of 10 random integers (between 0 and 10),
     each followed by a random delay. The delay is simulated using
