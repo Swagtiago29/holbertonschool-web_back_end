@@ -8,13 +8,14 @@ to execute the function multiple times in parallel.
 """
 import importlib
 import asyncio
-async_comprehension = importlib.import_module('1-async_comprehension').async_comprehension
 import time
+async_comprehension = importlib.import_module('1-async_comprehension').async_comprehension
+
 
 async def measure_runtime()->float:
     """measures runtime of async_comprehension 4 times in parallel"""
     start = time.time()
-    asyncio.gather(async_comprehension(),async_comprehension(),
+    await asyncio.gather(async_comprehension(),async_comprehension(),
                    async_comprehension(),async_comprehension())
     end = time.time()
-    return start - end
+    return end - start
