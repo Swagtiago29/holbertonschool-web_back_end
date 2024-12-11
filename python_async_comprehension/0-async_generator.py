@@ -24,9 +24,10 @@ Example:
 """
 import asyncio
 from random import randint
+from typing import AsyncGenerator
 
 
-async def async_generator():
+async def async_generator() -> AsyncGenerator[int, None]:
     """
     Asynchronously generates a list of 10 random integers (between 0 and 10),
     each followed by a random delay. The delay is simulated using
