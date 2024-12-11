@@ -3,21 +3,23 @@
 Module: Random Integer Generator with Asynchronous Delays
 --------------------------------------------------------
 
-This module defines an asynchronous function `async_generator` that simulates random delays
-while generating random integers. The function generates 10 random integers between 0 and 10,
-with each integer generation followed by a random delay (in seconds). The results are returned
-in a list.
+This module defines an asynchronous function `async_generator` that simulates
+random delays while generating random integers. The function generates 10
+random integers between 0 and 10, with each integer generation followed by a
+random delay (in seconds). The results are returned in a list.
 
 Usage:
     This script is intended to be run as a standalone program.
     The main function runs the async generator and prints the results.
 
 Functions:
-    - async_generator(): Asynchronously generates random integers with random delays.
-    - main(): Test function that runs the async_generator and prints the result.
+    - async_generator(): Asynchronously generates random integers with random
+     delays.
+    - main(): Test function that runs the async_generator and prints the
+    result.
 
 Example:
-    To run the script and view the output, execute the module in an environment
+    To run the script and view the output, execute the module in an environmen
     that supports asynchronous programming.
 """
 import asyncio
