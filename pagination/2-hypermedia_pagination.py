@@ -53,6 +53,13 @@ class Server:
             i = i + 1
         total_pages = math.ceil((i / page_size))
         next_page = page + 1
+        prev_page = page -1
         if next_page > total_pages:
             next_page = None
-        return{'page_size': page, 'page': page_size, 'data': self.get_page(page, page_size), 'next_page': next_page, 'prev_page': page - 1, 'total_pages':total_pages}
+        if prev_page < page:
+            prev_page = None
+        return{
+            'page_size': page, 'page': page_size,
+            'data': self.get_page(page, page_size), 'next_page': next_page,
+            'prev_page': prev_page, 'total_pages':total_pages
+            }
