@@ -9,8 +9,12 @@ from typing import List
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """
+    calculates the start and end indices
+    """
     res = ((page - 1) * page_size, page * page_size)
     return res
+
 
 class Server:
     """Server class to paginate a database of popular baby names.
