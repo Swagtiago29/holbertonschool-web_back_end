@@ -44,6 +44,7 @@ class Server:
         start_row, end_row = index_range(page, page_size)
         dataset = self.dataset()
         return dataset[start_row:end_row]
+    
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """
         returns a dictionary with data and page data
@@ -53,13 +54,13 @@ class Server:
             i = i + 1
         total_pages = math.ceil((i / page_size))
         next_page = page + 1
-        prev_page = page -1
+        prev_page = page - 1
         if next_page > total_pages:
             next_page = None
         if prev_page < 1:
             prev_page = None
-        return{
+        return {
             'page_size': page, 'page': page_size,
             'data': self.get_page(page, page_size), 'next_page': next_page,
-            'prev_page': prev_page, 'total_pages':total_pages
+            'prev_page': prev_page, 'total_pages': total_pages
             }
