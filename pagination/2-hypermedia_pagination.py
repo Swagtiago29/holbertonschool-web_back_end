@@ -19,7 +19,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
 class Server:
     """Server class to paginate a database of popular baby names.
     """
-    DATA_FILE = "Popular_Baby_Names.csv"
+    DATA_FILE = "pagination/Popular_Baby_Names.csv"
 
     def __init__(self):
         self.__dataset = None
@@ -56,7 +56,7 @@ class Server:
         prev_page = page -1
         if next_page > total_pages:
             next_page = None
-        if prev_page < page:
+        if prev_page < 1:
             prev_page = None
         return{
             'page_size': page, 'page': page_size,
