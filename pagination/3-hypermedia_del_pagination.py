@@ -47,7 +47,7 @@ class Server:
         dataset = self.indexed_dataset()
         next_index = index + page_size
         if next_index >= size:
-                next_index = None
+            next_index = None
         data = []
         for i in range(index, min(index + page_size, size)):
             if dataset.get(i) is not None:
