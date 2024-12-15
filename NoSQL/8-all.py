@@ -1,4 +1,4 @@
-#!/usr/bin/en python3
+#!/usr/bin/env python3
 """
     Module with the function list_all
 """
