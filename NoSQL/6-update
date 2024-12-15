@@ -1,5 +1,5 @@
 // my_comment
 db.school.updateMany(
-    {name: "Holberton School"},
+    {name: "Holberton school"},
     {$set: {address: "972 Mission street"}}
                     );
