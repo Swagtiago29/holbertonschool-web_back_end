@@ -1,0 +1,2 @@
+// my_comment
+db.school.deleteMany({name: "Holberton school"})
