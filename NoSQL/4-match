@@ -1,2 +1,2 @@
 // my_comment
-db.school.drop()
+db.school.find({name: "Holberton school"})
