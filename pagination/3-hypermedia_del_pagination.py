@@ -41,20 +41,20 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-            """Return a page of the dataset, ensuring deleted items are skipped over"""
-            size = len(self.dataset())
-            assert index < size
-            dataset = self.indexed_dataset()
-            next_index = index + page_size
-            if next_index >= size:
+        """Return a page of the dataset, ensuring deleted items are skipped"""
+        size = len(self.dataset())
+        assert index < size
+        dataset = self.indexed_dataset()
+        next_index = index + page_size
+        if next_index >= size:
                 next_index = None
-            data = []
-            for i in range(index, min(index + page_size, size)):
-                if dataset.get(i) is not None:
-                    data.append(dataset[i])
-            return{
-                'index': index,
-                'data': data,
-                'page_size': page_size,
-                'next_index': next_index
-                }
+        data = []
+        for i in range(index, min(index + page_size, size)):
+            if dataset.get(i) is not None:
+                data.append(dataset[i])
+        return {
+            'index': index,
+            'data': data,
+            'page_size': page_size,
+            'next_index': next_index
+            }
