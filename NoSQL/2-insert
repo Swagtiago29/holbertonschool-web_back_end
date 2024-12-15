@@ -1,5 +1,5 @@
 //Insert the document into the 'school'
-result = db.school.insertOne({
+const result = db.school.insertOne({
     name: "Holberton school"
 });
 // Mimic the WriteResult output format
