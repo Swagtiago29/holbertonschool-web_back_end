@@ -1,13 +1,24 @@
 #!/usr/bin/python3
-from base_catching import BaseCaching
 """Task 0 - Basic dictionary"""
+from base_catching import BaseCaching
 
 class BasicCache(BaseCaching):
+    """
+    BasicCache is a caching system that inherits from BaseCaching.
+    It has no limit on the number of items it can store.
+    """
     def put(self, key, item):
-        if key is None or item is None:
-            return
-        self.cache_data[key] = item
+        """
+        Assign the item value to the key in the cache_data dictionary.
+        Do nothing if key or item is None.
+        """
+        if key is not None or item is  not None:
+            self.cache_data[key] = item
     def get(self, key):
-        if self.cache_data is None or key is None:
-            return None
+        """
+        Return the value in cache_data linked to key.
+        Return None if key is None or doesn't exist.
+        """
+        if key is None:
+            return
         return self.cache_data.get(key)
