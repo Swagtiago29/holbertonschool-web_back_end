@@ -15,3 +15,6 @@ class FIFOCache(BaseCaching):
                 break
             self.cache_data.pop(first_item, None)
             print(f"DISCARD: {first_item}" )
+    def get(self, key):
+        if key is not None and key in self.cache_data:
+            return self.cache_data.get(key)
