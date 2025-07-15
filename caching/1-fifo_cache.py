@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-from base_catching import BaseCaching
+"""Task 1 - FIFO caching"""
+BaseCaching = __import__('base_caching').BaseCaching
 
 class FIFOCache(BaseCaching):
     def __init__(self):
