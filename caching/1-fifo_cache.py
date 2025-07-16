@@ -9,13 +9,13 @@ class FIFOCache(BaseCaching):
     def put(self, key, item):
         if key is None or item is None:
             pass
-        self.cache_data[key] = item
-        if len(self.cache_data) > self.MAX_ITEMS:
+        if len(self.cache_data) >= self.MAX_ITEMS:
             for keys in self.cache_data:
                 first_item = keys
                 break
             self.cache_data.pop(first_item, None)
             print(f"DISCARD: {first_item}" )
+        self.cache_data[key] = item
     def get(self, key):
         if key is not None and key in self.cache_data:
             return self.cache_data.get(key)
