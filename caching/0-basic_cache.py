@@ -2,6 +2,7 @@
 """Task 0 - Basic dictionary"""
 BaseCaching = __import__('base_caching').BaseCaching
 
+
 class BasicCache(BaseCaching):
     """
     BasicCache is a caching system that inherits from BaseCaching.
@@ -30,7 +31,8 @@ class BasicCache(BaseCaching):
             key: The key of the item to retrieve.
 
         Returns:
-            The item associated with the key, or None if key is None or not found.
+            The item associated with the key, or None if key is None
+            or not found.
         """
         if key is None:
             return None
