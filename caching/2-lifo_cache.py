@@ -8,7 +8,6 @@ class LIFOCache(BaseCaching):
 
     def __init__(self):
         super().__init__()
-        self.data = self.cache_data
 
     def put(self, key, item):
         """
@@ -19,7 +18,7 @@ class LIFOCache(BaseCaching):
             return
 
         if key not in self.cache_data and \
-                len(self.cache.data) >= self.MAX_ITEMS:
+                len(self.cache_data) >= self.MAX_ITEMS:
             last_item = next(reversed(self.cache_data))
             self.cache_data.pop(last_item)
             print(f"DISCARD: {last_item}")
