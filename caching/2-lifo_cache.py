@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Task 1 - FIFO caching"""
 BaseCaching = __import__('base_caching').BaseCaching
 
@@ -11,6 +11,10 @@ class LIFOCache(BaseCaching):
         self.data = self.cache_data
 
     def put(self, key, item):
+        """
+        Add an item in the cache.
+        If the cache is full, discard the last item put in (LIFO).
+        """
         if key is None or item is None:
             return
 
