@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """Task 1 - FIFO caching"""
 BaseCaching = __import__('base_caching').BaseCaching
 
@@ -28,4 +28,10 @@ class FIFOCache(BaseCaching):
         self.cache_data[key] = item
 
     def get(self, key):
+        """
+        Retrieve an item by key.
+
+        Returns:
+            The item if found, else None.
+        """
         return self.cache_data.get(key, None)
