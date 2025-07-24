@@ -4,6 +4,6 @@ import re
 
 
 def filter_datum(fields, redaction, message, separator):
-    """ comments fpr filter_datum """
+    """Redacts values of specified fields in a log message."""
     return re.sub(rf"({'|'.join(fields)})=[^{separator}]*",
                   rf"\1={redaction}", message)
