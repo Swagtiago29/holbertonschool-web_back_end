@@ -48,10 +48,10 @@ def get_logger() -> logging.Logger:
 
 
 def get_db() -> MySQLConnection:
-    """Connects to the MySQL database using env and returns the connection."""
+    """Connects to the MySQL database using env variables and returns the connection."""
     return mysql.connector.connect(
         user=os.getenv("PERSONAL_DATA_DB_USERNAME", "root"),
-        passwerd=os.getenv("PERSONAL_DATA_DB_PASSWORD", ""),
+        password=os.getenv("PERSONAL_DATA_DB_PASSWORD", ""),
         host=os.getenv("PERSONAL_DATA_DB_HOST", "localhost"),
-        db=os.getenv("PERSONAL_DATA_DB_NAME")
+        database=os.getenv("PERSONAL_DATA_DB_NAME"),
     )
