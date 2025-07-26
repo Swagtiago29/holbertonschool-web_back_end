@@ -6,6 +6,7 @@ import logging
 import os
 import mysql.connector
 from mysql.connector.connection import MySQLConnection
+import bcrypt
 
 PII_FIELDS = ("name", "email", "phone", "ssn", "password")
 
@@ -87,7 +88,8 @@ def main():
 
     cursor.close()
     db.close()
-
-
+def hash_password(password: str) -> bytes:
+    """Returns the hashed password in bytes"""
+    return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 if __name__ == "__main__":
     main()
