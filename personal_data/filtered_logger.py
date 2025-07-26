@@ -49,14 +49,14 @@ def get_logger() -> logging.Logger:
 
 def get_db() -> MySQLConnection:
     """
-    Establishes and returns a connection to the MySQL database using environment
-    variables.
+    Establishes and returns a connection to the MySQL database using
+    environment variables.
 
     Environment Variables:
         PERSONAL_DATA_DB_USERNAME: Database username (default: 'root').
         PERSONAL_DATA_DB_PASSWORD: Database password (default: '').
         PERSONAL_DATA_DB_HOST: Database host (default: 'localhost').
-        PERSONAL_DATA_DB_NAME: Name of the database (no default — must be set).
+        PERSONAL_DATA_DB_NAME: Name of the database (no default — must be set)
 
     Returns:
         A MySQLConnection object. The caller is responsible for closing the
