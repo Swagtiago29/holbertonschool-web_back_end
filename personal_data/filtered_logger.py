@@ -88,8 +88,7 @@ def main():
 
     cursor.close()
     db.close()
-def hash_password(password: str) -> bytes:
-    """Returns the hashed password in bytes"""
-    return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+
+
 if __name__ == "__main__":
     main()
