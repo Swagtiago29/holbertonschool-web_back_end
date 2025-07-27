@@ -21,13 +21,13 @@ if getenv("AUTH_TYPE") == "auth":
 def handle_before_request():
     """handles all auth before request"""
     if auth is None:
-        pass
-    if auth.require_auth(request.path, "['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']"):
-        pass
+        return
+    if auth.require_auth(request.path, ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']):
+        return
     if auth.authorization_header(request) == None:
         abort(401)
     if auth.current_user(request) == None:
-        abort(403)
+        abort
 
 @app.errorhandler(404)
 def not_found(error) -> str:
