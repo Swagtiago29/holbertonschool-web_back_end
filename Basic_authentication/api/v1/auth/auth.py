@@ -19,6 +19,7 @@ class Auth:
             if excluded == path:
                 return False
         return True
+
     def authorization_header(self, request=None) -> str:
         """to be implemented"""
         return None
