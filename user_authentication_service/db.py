@@ -30,11 +30,9 @@ class DB:
             DBSession = sessionmaker(bind=self._engine)
             self.__session = DBSession()
         return self.__session
-    
+
     def add_user(self, email: str, hashed_password: str) -> object:
-        if email is not None and hashed_password is not None:
-            new_user = User(email=email, hashed_password=hashed_password)
-            self._session.add(new_user)
-            self.__session.commit()
-            return new_user
-        return None
+        new_user = User(email=email, hashed_password=hashed_password)
+        self._session.add(new_user)
+        self.__session.commit()
+        return new_user
