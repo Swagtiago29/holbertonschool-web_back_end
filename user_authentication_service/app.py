@@ -5,17 +5,18 @@ from auth import Auth
 AUTH = Auth()
 app = Flask(__name__)
 
-
 @app.route('/', methods=['GET'])
 def welcome():
     return jsonify({"message": "Bienvenue"})
 
-
 @app.route('/users', methods=['POST'])
 def users():
-    data = request.get_json() or request.form
-    email = data.get('email')
-    password = data.get('password')
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    if not email or not password:
+        # Optional: handle missing fields gracefully
+        return jsonify({"message": "email and password required"}), 400
 
     try:
         AUTH.register_user(email, password)
@@ -23,6 +24,5 @@ def users():
     except ValueError:
         return jsonify({"message": "email already registered"}), 400
 
-
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000)
