@@ -33,12 +33,14 @@ class DB:
         return self.__session
 
     def add_user(self, email: str, hashed_password: str) -> User:
+        """adds a new user instance to db"""
         new_user = User(email=email, hashed_password=hashed_password)
         self._session.add(new_user)
         self.__session.commit()
         return new_user
 
     def find_user_by(self, **kwargs) -> User:
+        """finds user from bd from keywords"""
         try:
             user = self._session.query(User).filter_by(**kwargs).first()
             if user is None:
@@ -48,6 +50,8 @@ class DB:
             raise
 
     def update_user(self, user_id: int, **kwargs) -> None:
+        """updates the user attribute passed in kwargs if
+        it exists, else raise ValueError"""
         user = self.find_user_by(id=user_id)
         for key, value in kwargs.items():
             if not hasattr(user, key):
