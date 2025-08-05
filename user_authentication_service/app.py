@@ -17,9 +17,9 @@ def users():
     password = data.get('password')
     try:
         AUTH.register_user(email, password)
-        return {"email": "<registered email>", "message": "user created"}, 200
+        return {"email": f"{email}", "message": "user created"}, 200
     except ValueError:
-        return {"message": "email already registered"}
+        return {"message": "email already registered"}, 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
