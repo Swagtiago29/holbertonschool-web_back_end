@@ -12,7 +12,7 @@ def welcome():
 
 @app.route('/users', methods=['POST'])
 def users():
-    data = request.get_json()
+    data = request.get_json() or request.form
     email = data.get('email')
     password = data.get('password')
     try:
