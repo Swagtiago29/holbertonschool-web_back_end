@@ -10,6 +10,7 @@ def _hash_password(password: str) -> bytes:
     salt = bcrypt.gensalt()
     return bcrypt.hashpw(encoded, salt)
 
+
 class Auth:
     """Auth class to interact with the authentication database.
     """
@@ -20,7 +21,7 @@ class Auth:
     def register_user(self, email: str, password: str) -> User:
         try:
             self._db.find_user_by(email=email)
-            raise ValueError (f"User {email} already exists")
+            raise ValueError(f"User {email} already exists")
         except NoResultFound:
             hashed_password = _hash_password(password)
             self._db.add_user(email, hashed_password)
