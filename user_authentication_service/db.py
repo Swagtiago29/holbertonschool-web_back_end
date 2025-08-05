@@ -46,7 +46,7 @@ class DB:
             return user
         except InvalidRequestError:
             raise
-    
+
     def update_user(self, user_id: int, **kwargs) -> None:
         user = self.find_user_by(id=user_id)
         for key, value in kwargs.items():
