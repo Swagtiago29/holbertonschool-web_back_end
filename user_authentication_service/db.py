@@ -9,6 +9,7 @@ from sqlalchemy.orm.exc import NoResultFound
 from sqlalchemy.exc import InvalidRequestError
 from user import User
 from user import Base
+from bcrypt import hashpw
 
 
 class DB:
@@ -58,3 +59,6 @@ class DB:
                 raise ValueError
             setattr(user, key, value)
         self._session.commit()
+
+    def _hash_password(self, password:str) -> bytes:
+        return password.hashpw()
