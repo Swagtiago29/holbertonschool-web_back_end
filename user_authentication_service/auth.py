@@ -12,7 +12,7 @@ def _hash_password(password: str) -> bytes:
     return hashpw(encoded, salt)
 
 def _generate_uuid() -> str:
-    new_uuid = uuid4()
+    new_uuid = uuid.uuid()
     return str(new_uuid)
 
 class Auth:
