@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Auth module for handling user authentication, session management,
+and password hashing for the User Authentication Service.
+"""
 from bcrypt import hashpw, checkpw, gensalt
 from db import DB
 from user import User
