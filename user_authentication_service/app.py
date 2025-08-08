@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+Flask application providing user authentication endpoints:
+registration, login, logout, profile retrieval, and password reset.
+"""
 from flask import Flask, jsonify, request, abort, redirect
 from auth import Auth
 
@@ -8,16 +12,17 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def welcome():
+    """Return a welcome message."""
     return jsonify({"message": "Bienvenue"})
 
 
 @app.route('/users', methods=['POST'])
 def users():
+    """Register a new user with email and password."""
     email = request.form.get('email')
     password = request.form.get('password')
 
     if not email or not password:
-        # Optional: handle missing fields gracefully
         return jsonify({"message": "email and password required"}), 400
 
     try:
@@ -29,6 +34,7 @@ def users():
 
 @app.route('/sessions', methods=['POST'])
 def login():
+    """Log in a user, create a session, and set the session cookie."""
     email = request.form.get('email')
     password = request.form.get('password')
 
@@ -46,6 +52,7 @@ def login():
 
 @app.route('/sessions', methods=['DELETE'])
 def logout():
+    """Log out a user by destroying the session and redirecting to /."""
     session_id = request.cookies.get('session_id')
     if not session_id:
         abort(403)
@@ -60,6 +67,7 @@ def logout():
 
 @app.route('/profile', methods=['GET'])
 def profile():
+    """Retrieve the profile of the logged-in user."""
     session_id = request.cookies.get('session_id')
     if not session_id:
         abort(403)
@@ -73,6 +81,7 @@ def profile():
 
 @app.route('/reset_password', methods=['POST'])
 def get_reset_password_token():
+    """Generate a password reset token for a given email."""
     try:
         email = request.form.get('email')
         reset_token = AUTH.get_reset_password_token(email)
@@ -83,6 +92,7 @@ def get_reset_password_token():
 
 @app.route('/reset_password', methods=['PUT'])
 def update_password():
+    """Update the user's password using a valid reset token."""
     try:
         email = request.form.get('email')
         reset_token = request.form.get('reset_token')
