@@ -11,12 +11,14 @@ import uuid
 
 
 def _hash_password(password: str) -> bytes:
+    """Hashes password and returns it in bytes"""
     encoded = password.encode('utf-8')
     salt = gensalt()
     return hashpw(encoded, salt)
 
 
 def _generate_uuid() -> str:
+    """Generates new uuid and returns it"""
     new_uuid = uuid.uuid4()
     return str(new_uuid)
 
