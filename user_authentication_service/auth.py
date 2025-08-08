@@ -11,26 +11,27 @@ import uuid
 
 
 def _hash_password(password: str) -> bytes:
-    """Hashes password and returns it in bytes"""
+    """Return a salted hash of the input password."""
     encoded = password.encode('utf-8')
     salt = gensalt()
     return hashpw(encoded, salt)
 
 
 def _generate_uuid() -> str:
-    """Generates new uuid and returns it"""
+    """Return a new string UUID."""
     new_uuid = uuid.uuid4()
     return str(new_uuid)
 
 
 class Auth:
-    """Auth class to interact with the authentication database.
-    """
+    """Auth class to interact with the authentication database."""
 
     def __init__(self):
+        """Initialize the Auth instance with a database connection."""
         self._db = DB()
 
     def register_user(self, email: str, password: str) -> User:
+        """Register a new user with an email and password."""
         try:
             self._db.find_user_by(email=email)
             raise ValueError(f"User {email} already exists")
@@ -40,6 +41,7 @@ class Auth:
             return self._db.find_user_by(email=email)
 
     def valid_login(self, email: str, password: str) -> bool:
+        """Check if provided login credentials are valid."""
         try:
             user = self._db.find_user_by(email=email)
             return checkpw(password.encode('utf-8'), user.hashed_password)
@@ -47,6 +49,7 @@ class Auth:
             return False
 
     def create_session(self, email: str) -> str:
+        """Create a new session for the user and return the session ID."""
         try:
             curent_user = self._db.find_user_by(email=email)
             user_uuid = _generate_uuid()
@@ -56,6 +59,7 @@ class Auth:
             return None
 
     def get_user_from_session_id(self, session_id: str) -> User:
+        """Return the user corresponding to a given session ID."""
         try:
             if not session_id:
                 return None
@@ -65,6 +69,7 @@ class Auth:
             return None
 
     def destroy_session(self, user_id: int) -> None:
+        """Destroy the session for the given user ID."""
         try:
             user = self._db.find_user_by(id=user_id)
             user.session_id = None
@@ -74,6 +79,7 @@ class Auth:
             return None
 
     def get_reset_password_token(self, email: str) -> str:
+        """Generate and return a password reset token for the user."""
         try:
             user = self._db.find_user_by(email=email)
             new_uuid = self.create_session(email)
@@ -84,6 +90,7 @@ class Auth:
             raise ValueError
 
     def update_password(self, reset_token: str, password: str) -> None:
+        """Update the user's password using the provided reset token."""
         try:
             user = self._db.find_user_by(reset_token=reset_token)
             hashed = _hash_password(password)
