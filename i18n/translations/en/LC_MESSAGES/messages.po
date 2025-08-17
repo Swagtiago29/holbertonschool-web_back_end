@@ -1,14 +1,5 @@
-# English translations for PROJECT.
-# Copyright (C) 2025 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
-
-msgid "home_header"
-msgstr "Hello World!"
-
-msgid "home_title"
-msgstr "Welcome to Holberton"
-
+msgid ""
+msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-08-17 13:45-0300\n"
@@ -21,3 +12,9 @@ msgstr "Welcome to Holberton"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
+
+msgid "home_header"
+msgstr "Hello World!"
+
+msgid "home_title"
+msgstr "Welcome to Holberton"
