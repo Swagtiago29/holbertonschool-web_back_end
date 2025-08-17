@@ -27,7 +27,7 @@ babel.init_app(app, locale_selector=get_locale)
 @app.route("/", methods=["GET"])
 def index():
     """Function to return template on route=/ """
-    return render_template("3-index.html")
+    return render_template("3-index.html", get_locale=get_locale())
 
 
 if __name__ == "__main__":
