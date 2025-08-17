@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def index():
+    """Function to return template on route=/ """
     return render_template("0-index.html")
 
 
