@@ -25,5 +25,8 @@ describe('calculateNumber', function () {
         it('should round the numbers and subtract them', function () {
             assert.strictEqual(calculateNumber('DIVIDE', 6.2, 3.2), 2)
         })
+        it('should round the numbers and return Error', function(){
+            assert.strictEqual(calculateNumber('DIVIDE', 3.2, 0), 'Error')
+        })
     })
 });
