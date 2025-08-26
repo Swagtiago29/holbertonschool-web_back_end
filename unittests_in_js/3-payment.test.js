@@ -1,6 +1,6 @@
-const { expect } = requre('chai')
+const { expect } = require('chai')
 const sinon = require('sinon')
-const Utils = requre('./utils')
+const Utils = require('./utils')
 const sendPaymentRequestsToApi = require('./3-payment')
 
 describe('sendPaymentRequestsToApi', function(){
