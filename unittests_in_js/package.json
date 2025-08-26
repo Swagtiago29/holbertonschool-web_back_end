@@ -4,5 +4,8 @@
     },
     "devDependencies": {
         "mocha": "^11.7.1"
+    },
+    "dependencies": {
+        "chai": "^6.0.1"
     }
 }
