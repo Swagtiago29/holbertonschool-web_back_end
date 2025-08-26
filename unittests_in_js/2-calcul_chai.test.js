@@ -26,7 +26,7 @@ describe('calculateNumber', function () {
             expect(calculateNumber('DIVIDE', 6.2, 3.2)).to.equal(2)
         });
                 it('should round the numbers and return Error', function(){
-            expect(calculateNumber('DIVIDE', 3.2, 0)).to.equal('Eror')
+            expect(calculateNumber('DIVIDE', 3.2, 0)).to.equal('Error')
         })
     })
 });
