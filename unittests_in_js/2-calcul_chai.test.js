@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const calculateNumber = require('./2-calcul');
+const calculateNumber = require('./2-calcul_chai');
 
 describe('calculateNumber', function () {
     describe('type SUM', function () {
@@ -7,7 +7,7 @@ describe('calculateNumber', function () {
             expect(calculateNumber('SUM', 2.2, 1.1)).to.equal(3);
         });
         it('should round the numbers and add them', function () {
-            expect(calculateNumber('SUM', 2.7, 3.7)).to.equal(5)
+            expect(calculateNumber('SUM', 2.7, 3.7)).to.equal(7)
         })
     })
     describe('type SUBTRACT', function () {
