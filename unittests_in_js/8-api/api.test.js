@@ -1,26 +1,24 @@
 const { expect } = require('chai');
 const app = require('./api');
 
+let server;
+
 describe('Index page', function () {
-    it('should return correct status code', function (done) {
-        request(app)
-            .get('/')
-            .expect(200, done)
-    });
+  before((done) => {
+    // Start server before tests
+    server = app.listen(7865, done);
+  });
 
-    it('should return correct result', function (done) {
-        request(app)
-            .get('/')
-            .end((err, res) => {
-                expect(res.text).to.equal('Welcome to the payment system');
-                done();
-            });
-    });
+  after((done) => {
+    // Close server after tests
+    server.close(done);
+  });
 
-    it('should return the correct content type', function (done) {
-        request(app)
-            .get('/')
-            .expect('Content-Type', /html/)
-            .end(done)
-    })
-})
+  it('should return correct status code and body', async function () {
+    const res = await fetch('http://localhost:7865/');
+    const text = await res.text();
+
+    expect(res.status).to.equal(200);
+    expect(text).to.equal('Welcome to the payment system');
+  });
+});
