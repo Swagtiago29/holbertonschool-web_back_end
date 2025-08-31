@@ -11,7 +11,7 @@ app.get(`/cart/:id`, (req, res) => {
     if (!/^\d+$/.test(id)) {
         return res.status(400).send('Invalid cart id')
     }
-    res.send(`Payment methods for cart ${id}`)
+    return res.send(`Payment methods for cart ${id}`)
 })
 // Only start server if run directly
 if (require.main === module) {
