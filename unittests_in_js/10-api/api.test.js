@@ -32,11 +32,26 @@ describe('Login endpoint', function () {
         const res = await fetch('http://localhost:7865/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: { userName: 'Santiwi' }
+            body: JSON.stringify({ userName: 'Santiwi' })
         })
         const text = await res.text()
 
         expect(res.status).to.equal(200)
         expect(text).to.equal('Welcome Santiwi')
+    })
+});
+
+describe('available payments endopint', function () {
+    it('should return correct object', async function () {
+        const res = await fetch('http://localhost:7865/available_payments')
+        const json = await res.json()
+
+        expect(res.status).to.equal(200)
+        expect(json).to.deep.equal({
+            payment_methods: {
+                credit_cards: true,
+                paypal: false
+            }
+        })
     })
 })
