@@ -9,7 +9,7 @@ app.get(`/cart/:id`, (req, res) => {
     const id = req.params.id
 
     if (!/^\d+$/.test(id)) {
-        return res.status(400).send('Invalid cart id')
+        return res.status(404).send('Invalid cart id')
     }
     return res.send(`Payment methods for cart ${id}`)
 })
