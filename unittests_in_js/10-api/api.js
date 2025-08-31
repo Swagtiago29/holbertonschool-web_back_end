@@ -27,7 +27,7 @@ app.get('/available_payments', (req, res) => {
 
 app.post('/login', (req, res) => {
     const { userName } = req.body
-    return res.send(`Welcome ${username}`)
+    return res.send(`Welcome ${userName}`)
 })
 
 // IMPORTANT Only start server if run directly
